@@ -1,0 +1,23 @@
+
+Paste this diagram:
+
+```text
+              ┌────────────────────────────┐
+              │        Internet             │
+              └──────────────┬─────────────┘
+                             │
+                 ┌───────────▼────────────┐
+                 │     Azure Firewall     │
+                 └───────┬───────┬────────┘
+                         │       │
+                ┌────────▼─┐   ┌─▼────────┐
+                │  Web Subnet│ │ App Subnet│
+                └───────────┘ └───────────┘
+                         │       │
+                       ┌─▼───────▼─┐
+                       │ DB Subnet │
+                       └───────────┘
+                         
+  Identity: Entra ID, Conditional Access  
+  Access: Azure Bastion (no open RDP/SSH)  
+  Security: NSG + Firewall + Private Endpoints  
